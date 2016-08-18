@@ -46,6 +46,8 @@ public class Register extends HttpServlet {
 		String state = request.getParameter("state");
 		String zip = request.getParameter("zipcode");
 		String country = request.getParameter("country");
+		country = country.toUpperCase();
+		state = state.toUpperCase();
 		PrintWriter out = response.getWriter();
 		
 		if(!FieldValidator.validateNameFields(fname) && !FieldValidator.validateNameFields(lname))
