@@ -1,7 +1,7 @@
-''dialect MySQL
-''Neil Amouyal
+--dialect MySQL
+--Neil Amouyal
 
-''table definition
+--table definition
 CREATE TABLE `sampleregistry`.`registrants` (
   `firstName` NVARCHAR(512) NOT NULL,
   `lastName` VARCHAR(512) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE `sampleregistry`.`registrants` (
 
 
 
-''insert_registrant stored procedure
+--insert_registrant stored procedure
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_registrant`(
 IN in_fname NVARCHAR(512),
@@ -35,7 +35,7 @@ END$$
 DELIMITER ;
 
 
-''get_registrants stored procedure
+--get_registrants stored procedure
 DELIMITER $$
 CREATE DEFINER=`root`@`localhost` PROCEDURE `get_registrants`()
 BEGIN
