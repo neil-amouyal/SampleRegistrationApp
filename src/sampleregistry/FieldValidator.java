@@ -178,6 +178,11 @@ public class FieldValidator {
 	public static boolean validateState(String state) {
 		boolean status = true;
 		int stateCodeLength = 2;
+		if (state==null)
+		{
+			status = false;
+			return status;
+		}
 		String stateUpcase = state.toUpperCase();
 		try{
 			if(state.length() != stateCodeLength)
