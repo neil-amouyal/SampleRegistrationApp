@@ -17,7 +17,6 @@ import javax.servlet.http.HttpServletResponse;
  * A form found on index.html will pass parameters to the servlet and the servlet will insert the new records
  * if the data meets the criteria defined in the FieldValidator class.
  * 
- * @author Neil Amouyal
  */
 @WebServlet(asyncSupported = true, description = "Registeration entry point", urlPatterns = { "/Register" })
 public class Register extends HttpServlet {
@@ -37,7 +36,6 @@ public class Register extends HttpServlet {
 	 * 	
 	 * Post method to receive the form parameters, validate, and then try to insert into the database.
 	 * Connection to the database is not established until all the fields have been validated through the FieldValidator class.
-	 * @author Neil Amouyal
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String fname = request.getParameter("firstname");

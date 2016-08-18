@@ -6,8 +6,6 @@ package sampleregistry;
  * 
  * A statecodes String[] is used to contain the different 2-letter state codes for all 50 states, and allows also for DC.
  * Potential state-code entries are validated against this structure.
- * 
- * @author Neil Amouyal
  *
  */
 public class FieldValidator {
@@ -33,9 +31,8 @@ public class FieldValidator {
 	 * 
 	 * Even though robots probably won't register at this website, names that include numbers are permitted.
 	 * The spec didn't say otherwise so I won't discriminate against robots and robotic names.
-	 * @param name
-	 * @return
-	 * @author Neil Amouyal
+	 * @param name name parameter to validate
+	 * @return true if name field is valid
 	 */
 	public static boolean validateNameFields(String name)
 	{
@@ -68,9 +65,8 @@ public class FieldValidator {
 	 * by adding them in the countrycodes array. Length of the Country code is limited to 2 characters.
 	 * 
 	 * 
-	 * @author Neil Amouyal
-	 * @param country
-	 * @return
+	 * @param country country code to validate
+	 * @return true if the country code entered is valid
 	 */
 	public static boolean validateCountryField(String country)
 	{
@@ -100,9 +96,8 @@ public class FieldValidator {
 	 * Add more valid countries to the countrycodes array to include more regions.
 	 * 
 	 * 
-	 * @author Neil Amouyal
-	 * @param country
-	 * @return
+	 * @param country this variable is guaranteed to be two characters long, will be validated for contents in this function
+	 * @return returns true if the code entered is accepted
 	 */
 	private static boolean validCountryCode(String country) 
 	{
@@ -126,9 +121,8 @@ public class FieldValidator {
 	 * must be all digits. 
 	 * 
 	 * 
-	 * @author Neil Amouyal
-	 * @param zip
-	 * @return
+	 * @param zip zipcode to test for format and contents
+	 * @return returns true if the input zipcode is 5 or 9 digits long (9 digits and a hyphen)
 	 */
 	public static boolean validateZipField(String zip)
 	{
@@ -178,9 +172,8 @@ public class FieldValidator {
 	 * string[] array of acceptable state codes via a helper function.
 	 * 
 	 * 
-	 * @author Neil Amouyal
-	 * @param state
-	 * @return
+	 * @param state parameter to validate, should be 2 characters long and is a valid state code
+	 * @return returns true if the state parameter is two characters and map to a real state
 	 */
 	public static boolean validateState(String state) {
 		boolean status = true;
@@ -207,9 +200,8 @@ public class FieldValidator {
 	 * input is guaranteed to be 2 characters long and already upper-cased. 
 	 * 
 	 * 
-	 * @author Neil Amouyal
-	 * @param state
-	 * @return
+	 * @param state two character long code to validate
+	 * @return true if the input state code maps to an actual state
 	 */
 	private static boolean checkStateCodeMap(String state) {
 		boolean isValidCode = false;

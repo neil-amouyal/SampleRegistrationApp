@@ -2,7 +2,6 @@
  * This javascript module contains the validation for the form found on index.html
  * jquery is expected to be loaded already
  * 
- * @author Neil Amouyal
  */
 
 
@@ -19,9 +18,8 @@ var states = [		"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL",
  * the jquery validate plugin.
  * 
  * 
- * @author Neil Amouyal
- * @param inStateCode
- * @returns {Boolean}
+ * @param inStateCode parameter input to validate
+ * @returns {Boolean} true if the entered code is valid
  */
 function isValidStateCode(inStateCode)
 {
@@ -45,8 +43,7 @@ function isValidStateCode(inStateCode)
  * This function uses an 'isDigit' hack by relying on a range of characters.
  * 
  * 
- * @author Neil Amouyal
- * @param inzip
+ * @param inzip input zipcode for validation
  * @returns {Boolean}
  */
 function isValidZipCode(inzip)

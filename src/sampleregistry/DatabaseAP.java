@@ -13,8 +13,6 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 
 /**
- * @author Neil Amouyal
- * 
  * Database Layer - this class will contain all the database functionality to expose to the rest of the program.
  * Two simple methods are written here to take advantage of the stored procedures in the database.
  * One insert method to add new content
@@ -48,8 +46,7 @@ public class DatabaseAP
 	 * 
 	 * This function should take page-size and start-index parameters for larger data sets.
 	 * 
-	 * @return ArrayList<String[]>
-	 * @author Neil Amouyal
+	 * @return ArrayList&gt;String[]&lt;
 	 */
 	public ArrayList<String[]> getRecords()
 	{
@@ -90,22 +87,20 @@ public class DatabaseAP
 	}
 	
 	/**
-	 * @author Neil Amouyal
-	 * 
 	 * insertRecord is a wrapper for the 'insert_registrant' stored proc.
 	 * Validation on parameters occurs in the servlet layer so as 
 	 * not to open the database connection unless all parameters have been validated.
 	 * 
-	 * @param fname
-	 * @param lname
-	 * @param address1
-	 * @param address2
-	 * @param city
-	 * @param state
-	 * @param zip
-	 * @param country
-	 * @return
-	 * @throws SQLException
+	 * @param fname first name field
+	 * @param lname last name field
+	 * @param address1 address1 field
+	 * @param address2 address2 field
+	 * @param city city field
+	 * @param state two-letter state code
+	 * @param zip 5 or 9 digit zip code
+	 * @param country two-letter country code
+	 * @return returns true if the entry has been inserted, false if not
+	 * @throws SQLException throws an sql exception upon errors
 	 */
 	public boolean insertRecord(String fname, String lname, String address1, String address2,
 			String city, String state, String zip, String country) throws SQLException
