@@ -95,7 +95,7 @@ $(document).ready(function () {
 	
 	jQuery.validator.addMethod("isvalidZip", function(value, element) {
     	return this.optional(element) || isValidZipCode(value);
-	}, "* not in US.");
+	}, "* not a valid zipcode.");
 	
 	
 	/*
