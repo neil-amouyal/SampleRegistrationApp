@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mocha Tests</title>
+    <link rel="stylesheet" href="node_modules/mocha/mocha.css">
+  </head>
+  <body>
+    <div id="mocha"></div>
+    <script src="node_modules/mocha/mocha.js"></script>
+    <script src="node_modules/chai/chai.js"></script>
+    <script>mocha.setup('bdd')</script>
+
+    <!-- load libraries to test, make sure TESTMODE set so it doesn't try to do any on-load stuff -->
+    <script type='text/javascript'>var TESTMODE = 1;</script>
+	<script src="scripts/validationConfig.js"></script>
+    
+    <!-- load StateCode Validation test cases -->
+	<script src="scripts/testCases/TestGoodInputStateValidation.js"></script>
+	<script src="scripts/testCases/TestBadFakeInputStateValidation.js"></script>
+	<script src="scripts/testCases/TestTooLongInputStateValidation.js"></script>
+	<script src="scripts/testCases/TestTooShortInputStateValidation.js"></script>
+	<script src="scripts/testCases/TestNullInputStateValidation.js"></script>
+	
+	<!-- load Zip Code Validation test case -->
+	<script src="scripts/testCases/TestGoodInputZipCodeValidation.js"></script>
+	<script src="scripts/testCases/TestBadInputZipCodeValidation.js"></script>
+	<script src="scripts/testCases/TestGoodLongInputZipCodeValidation.js"></script>
+	<script src="scripts/testCases/TestBadLongInputZipCodeValidation.js"></script>
+	<script src="scripts/testCases/TestTooShortInputZipCodeValidation.js"></script>
+	<script src="scripts/testCases/TestTooLongInputZipCodeValidation.js"></script>
+	<script src="scripts/testCases/TestNullInputZipCodeValidation.js"></script>
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>

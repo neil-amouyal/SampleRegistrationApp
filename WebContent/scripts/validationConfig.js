@@ -24,6 +24,10 @@ var states = [		"AL", "AK", "AZ", "AR", "CA", "CO", "CT", "DE", "DC", "FL",
 function isValidStateCode(inStateCode)
 {
 	var isvalid = false;
+	if(inStateCode==null)
+	{
+		return isvalid;
+	}
 	var upcasedState = inStateCode.toUpperCase();
 	for(var x=0; x<states.length; x+=1)
 	{
@@ -48,9 +52,18 @@ function isValidStateCode(inStateCode)
  */
 function isValidZipCode(inzip)
 {
+	if(inzip == null)
+	{
+		return false;
+	}
 	var valid_zip = true;
 	var hyphenIndex = 5;
 	var i = inzip.length;
+	if(i !==5 && i!==10)
+	{
+		valid_zip = false;
+		return valid_zip
+	}
 	for(var i=0;i<inzip.length;i+=1)
 	{
 		var x = inzip[i];
@@ -80,7 +93,10 @@ function isValidZipCode(inzip)
  * Page Initialization, add the validation methods after helper functions loaded.
  */
 $(document).ready(function () {
-	
+	if (TESTMODE)
+	{
+		return;
+	}
 	//add some validation functions
 	jQuery.validator.addMethod("isValidState", function(value, element) {
     	return this.optional(element) || isValidStateCode(value) ;
