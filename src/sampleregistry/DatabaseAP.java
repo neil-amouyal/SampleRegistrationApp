@@ -64,16 +64,16 @@ public class DatabaseAP
 			while(rs.next())
 			{
 				String[] row = new String[9];
-				row[0] = rs.getString(1);//first name
-				row[1] = rs.getString(2);//last name
-				row[2] = rs.getString(3);//address1
-				row[3] = rs.getString(4);//address2
-				row[4] = rs.getString(5);//city
-				row[5] = rs.getString(6);//state
-				row[6] = rs.getString(7);//zip
-				row[7] = rs.getString(8);//country
+				row[0] = rs.getString("firstName");
+				row[1] = rs.getString("lastName");
+				row[2] = rs.getString("address1");
+				row[3] = rs.getString("address2");
+				row[4] = rs.getString("city");//city
+				row[5] = rs.getString("state");//state
+				row[6] = rs.getString("zip");//zip
+				row[7] = rs.getString("country");//country
 				DateFormat df = new SimpleDateFormat("MM/dd/yyyy HH:mm:ss");
-				row[8] = df.format(rs.getTimestamp(9)); //full date entered
+				row[8] = df.format(rs.getTimestamp("dateEntered"));
 				records.add(row);
 			}
 		} catch (ClassNotFoundException e) {
