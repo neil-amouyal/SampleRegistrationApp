@@ -93,7 +93,7 @@ function isValidZipCode(inzip)
  * Page Initialization, add the validation methods after helper functions loaded.
  */
 $(document).ready(function () {
-	if (TESTMODE)
+	if (typeof TESTMODE !== 'undefined')
 	{
 		return;
 	}
