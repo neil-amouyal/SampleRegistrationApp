@@ -1,0 +1,33 @@
+tr.even_row
+{
+	background-color: #ccc
+}
+
+tr.odd_row
+{
+	background-color: #eee
+}
+
+th
+{
+	background-color: #000;
+	color: #fff;
+}
+
+table.mainTable, th, tr.even_row, tr.odd_row, td {
+   border: none;
+   border-collapse: collapse;
+   padding:0;
+}
+
+table.mainTable
+{
+	width:90%;
+	text-align: center;
+}
+
+body
+{
+	font-family: verdana,arial,sans-serif;
+	font-size: .9em;
+}

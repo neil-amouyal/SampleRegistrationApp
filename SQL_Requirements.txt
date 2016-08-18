@@ -1,0 +1,44 @@
+''dialect MySQL
+''Neil Amouyal
+
+''table definition
+CREATE TABLE `sampleregistry`.`registrants` (
+  `firstName` NVARCHAR(512) NOT NULL,
+  `lastName` VARCHAR(512) NOT NULL,
+  `address1` VARCHAR(512) NOT NULL,
+  `address2` VARCHAR(512) NULL,
+  `city` VARCHAR(512) NOT NULL,
+  `state` VARCHAR(2) NOT NULL,
+  `zip` VARCHAR(10) NOT NULL,
+  `country` VARCHAR(2) NOT NULL DEFAULT 'US',
+  `dateEntered` DATETIME DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`firstName`, `lastName`, `zip`, `address1`));
+
+
+
+''insert_registrant stored procedure
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `insert_registrant`(
+IN in_fname NVARCHAR(512),
+IN in_lname NVARCHAR(512),
+IN in_address1 NVARCHAR(512),
+IN in_address2 NVARCHAR(512),
+IN in_city NVARCHAR(512),
+IN in_state NVARCHAR(2),
+IN in_zip NVARCHAR(10),
+IN in_country NVARCHAR(2))
+BEGIN
+insert into registrants
+(firstName, lastName, address1, address2, city, state, zip,country) 
+values (in_fname, in_lname, in_address1, in_address2, in_city, in_state, in_zip, in_country);
+END$$
+DELIMITER ;
+
+
+''get_registrants stored procedure
+DELIMITER $$
+CREATE DEFINER=`root`@`localhost` PROCEDURE `get_registrants`()
+BEGIN
+select * from registrants order by dateEntered Desc;
+END$$
+DELIMITER ;

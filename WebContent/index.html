@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Official Registration Form</title>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script></head>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+<script type="text/javascript" src="scripts/validationConfig.js"></script>
+<link rel="stylesheet" type="text/css" href="styles/basic.css">
+<body>
+
+
+<form id="registry_form" method="post" action="Register">
+  <fieldset>
+    <legend>Please provide your information below to register. (Fields marked with an asterisk are required.)</legend>
+    <p>
+      <label for="cfname">First Name *</label>
+      <input id="cfname" name="firstname" type="text">
+    </p>
+    <p>
+      <label for="clname">Last Name *</label>
+      <input id="clname" name="lastname" type="text">
+    </p>
+    <p>
+      <label for="cadrs1">Address1 *</label>
+      <input id="cadrs1" name="adrs1" type="text">
+    </p>
+    <p>
+      <label for="cadrs2">Address2</label>
+      <input id="cadrs2" type="text" name="adrs2">
+    </p>
+    <p>
+      <label for="ccity">City *</label>
+      <input id="ccity" type="text" name="city">
+    </p>
+    <p>
+      <label for="cstate">State *</label>
+      <input id="cstate" type="text" name="state">
+    </p>
+    <p>
+      <label for="czip">Zip * (5 or 9 digits)</label>
+      <input id="czip" type="text" name="zipcode">
+    </p>
+    <p>
+      <label for="ccountry">Country *</label>
+      <input id="ccountry" type="text" name="country">
+    </p>
+    <p>
+      <input class="submit" type="submit" value="Register">
+    </p>
+  </fieldset>
+</form>
+</body>
+</html>
