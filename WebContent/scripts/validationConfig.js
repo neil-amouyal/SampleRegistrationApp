@@ -110,7 +110,9 @@ $(document).ready(function () {
     	return this.optional(element) || isValidZipCode(value);
 	}, "* not a valid zipcode.");
 	
-	
+	//pre-set US code:
+	$('#ccountry')[0].value = "US";
+
 	/*
 	 * Specify the rules, targets, and messages to be used in the validation
 	 */
@@ -118,11 +120,11 @@ $(document).ready(function () {
         rules: {
             firstname: {
                 required: true,
-                minlength: 2
+                minlength: 1
             },
             lastname: {
                 required: true,
-                minlength: 2
+                minlength: 1
             },
             adrs1: {
                 required: true,
@@ -151,8 +153,8 @@ $(document).ready(function () {
             }
         },
         messages: {
-        	firstname: " First Name is required. 2 Character minimum",
-        	lastname: " Last Name is required. 2 Character minimum",
+        	firstname: " First Name is required.",
+        	lastname: " Last Name is required.",
         	adrs1: " Primary address information is required.",
         	country: { 
         		required: " Two letter country code required.",
